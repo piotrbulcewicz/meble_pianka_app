@@ -1,0 +1,40 @@
+.employee-assignment-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.employee-assignment-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.employee-assignment-checkbox__box {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--industrial-border-strong);
+  background: #fff;
+  color: var(--industrial-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.employee-assignment-checkbox__box--checked {
+  background: #dcdcdc;
+}
+
+@media print {
+  .employee-assignment-checkbox__box {
+    width: 18px;
+    height: 18px;
+    border-color: #000;
+    color: #000;
+  }
+}

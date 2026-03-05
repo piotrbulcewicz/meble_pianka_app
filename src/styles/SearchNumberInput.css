@@ -1,0 +1,30 @@
+.search-number-input {
+  display: grid;
+  gap: 6px;
+}
+
+.search-number-input__label {
+  color: var(--industrial-text);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.search-number-input__field {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--industrial-border);
+  border-radius: 0;
+  background: #fff;
+  color: var(--industrial-text);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.search-number-input__field:focus {
+  outline: none;
+  border-color: var(--industrial-border-strong);
+  box-shadow: none;
+}
