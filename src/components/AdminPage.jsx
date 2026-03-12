@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useMemo, useState } from "react";
 import SearchSelect from "./SearchSelect";
+import { BACKEND_URL } from "../config/api";
 import "../styles/AdminPage.css";
-
-const API_URL = "http://localhost:3001";
 
 const ELEMENT_FIELDS = [
   { key: "element", label: "Element" },
@@ -134,7 +133,7 @@ export default function AdminPage({ authToken, modelCatalog, onCatalogRefresh })
 
     try {
       const response = await axios.get(
-        `${API_URL}/api/admin/model-details`,
+        `${BACKEND_URL}/api/admin/model-details`,
         {
           ...getAuthConfig(authToken),
           params: {
@@ -234,7 +233,7 @@ export default function AdminPage({ authToken, modelCatalog, onCatalogRefresh })
 
     try {
       const response = await axios.put(
-        `${API_URL}/api/admin/model-details/${formState._id}`,
+        `${BACKEND_URL}/api/admin/model-details/${formState._id}`,
         mapFormToPayload(formState),
         getAuthConfig(authToken)
       );

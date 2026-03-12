@@ -3,10 +3,9 @@ import Search from "./components/Search";
 import ResultsPage from "./components/ResultsPage";
 import LoginPage from "./components/LoginPage";
 import AdminPage from "./components/AdminPage";
+import { BACKEND_URL } from "./config/api";
 import { useCallback, useEffect, useState } from "react";
 import useBrowserRouter from "./hooks/useBrowserRouter";
-
-const API_URL = "http://localhost:3001";
 
 function getStoredAuth() {
   const savedAuth = sessionStorage.getItem("authSession");
@@ -89,7 +88,7 @@ function App() {
 
     try {
       const response = await axios.get(
-        `${API_URL}/api/get-model`,
+        `${BACKEND_URL}/api/get-model`,
         getAuthConfig(token)
       );
 
@@ -117,7 +116,7 @@ function App() {
 
       try {
         const response = await axios.get(
-          `${API_URL}/api/me`,
+          `${BACKEND_URL}/api/me`,
           getAuthConfig(authToken)
         );
 
@@ -177,7 +176,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        `${API_URL}/api/models`,
+        `${BACKEND_URL}/api/models`,
         { records },
         getAuthConfig(authSession.token)
       );
@@ -212,7 +211,7 @@ function App() {
     });
 
     try {
-      const response = await axios.post(`${API_URL}/api/login`, credentials);
+      const response = await axios.post(`${BACKEND_URL}/api/login`, credentials);
       setAuthSession(response.data);
       sessionStorage.setItem("authSession", JSON.stringify(response.data));
       navigate("/");
@@ -237,7 +236,7 @@ function App() {
     if (callApi && token) {
       try {
         await axios.post(
-          `${API_URL}/api/logout`,
+          `${BACKEND_URL}/api/logout`,
           {},
           getAuthConfig(token)
         );
