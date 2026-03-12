@@ -13,6 +13,20 @@ function getAssignmentKey(record, elementIndex) {
   return `${record._id ?? `${record.model}-${record.variant}`}-${elementIndex}`;
 }
 
+function capitalizeElementName(value) {
+  if (!value) {
+    return "-";
+  }
+
+  const normalizedValue = String(value).trim();
+
+  if (!normalizedValue) {
+    return "-";
+  }
+
+  return normalizedValue.charAt(0).toUpperCase() + normalizedValue.slice(1);
+}
+
 export default function ResultsPage({ results, onBack }) {
   const records = results?.records ?? [];
   const [ employeeAssignments, setEmployeeAssignments ] = useState({});
@@ -126,7 +140,7 @@ export default function ResultsPage({ results, onBack }) {
 
       <div className="results-page__document">
         <header className="results-page__header">
-          <h1>Zestawienie rekordów</h1>
+          <h1>Zestawienie wyników</h1>
           <p>Znalezione rekordy: {results.foundCount} z {results.totalRequested}</p>
         </header>
 
@@ -183,6 +197,7 @@ export default function ResultsPage({ results, onBack }) {
                             <th>Szerokość</th>
                             <th>Grubość</th>
                             <th>Kształt</th>
+                            <th>Odpady</th>
                             <th>Materiał</th>
                             <th>Ilość bazowa</th>
                             <th>Ilość końcowa</th>
@@ -204,11 +219,12 @@ export default function ResultsPage({ results, onBack }) {
 
                             return (
                               <tr key={`${record._id}-${element.element}-${elementIndex}`}>
-                                <td>{element.element}</td>
+                                <td>{capitalizeElementName(element.element)}</td>
                                 <td>{element.length}</td>
                                 <td>{element.width}</td>
                                 <td>{element.thickness}</td>
                                 <td>{element.shape ?? "-"}</td>
+                                <td>{element.waste ?? "-"}</td>
                                 <td>{element.material}</td>
                                 <td>{element.baseQuantity}</td>
                                 <td>{element.totalQuantity}</td>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function useBrowserRouter() {
   const [ pathname, setPathname ] = useState(window.location.pathname);
@@ -15,14 +15,14 @@ export default function useBrowserRouter() {
     };
   }, []);
 
-  function navigate(nextPathname) {
+  const navigate = useCallback((nextPathname) => {
     if (nextPathname === window.location.pathname) {
       return;
     }
 
     window.history.pushState({}, "", nextPathname);
     setPathname(nextPathname);
-  }
+  }, []);
 
   return {
     pathname,

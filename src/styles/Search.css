@@ -1,22 +1,22 @@
 .search {
-  width: min(960px, calc(100% - 32px));
-  margin: 40px auto;
-  padding: 20px;
-  border: 1px solid var(--industrial-border-strong);
+  width: 100%;
+  margin: 0;
+  padding: 12px;
+  border: 0;
   border-radius: 0;
   background: var(--industrial-panel);
   box-shadow: none;
 }
 
 .search__header {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   border-bottom: 1px solid var(--industrial-border);
-  padding-bottom: 16px;
+  padding-bottom: 10px;
 }
 
 .search__header h1 {
   margin: 0 0 8px;
-  font-size: 28px;
+  font-size: 22px;
   color: var(--industrial-text);
   letter-spacing: 0;
   text-transform: none;
@@ -29,16 +29,16 @@
 
 .search__rows {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .search__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  margin-top: 24px;
-  padding-top: 18px;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 12px;
   border-top: 1px solid var(--industrial-border);
 }
 
@@ -50,7 +50,7 @@
 }
 
 .search__message {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
 }
 
@@ -63,13 +63,13 @@
 }
 
 .search__submit {
-  min-height: 42px;
+  min-height: 36px;
   border: 1px solid var(--industrial-border-strong);
   border-radius: 0;
-  padding: 0 18px;
+  padding: 0 12px;
   background: #dcdcdc;
   color: var(--industrial-text);
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
@@ -88,7 +88,7 @@
 
 @media (max-width: 768px) {
   .search {
-    padding: 20px;
+    padding: 10px;
   }
 
   .search__footer {

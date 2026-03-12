@@ -10,14 +10,17 @@
 .results-page__toolbar {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 0;
+  padding: 12px;
+  border-bottom: 1px solid var(--industrial-border);
+  background: var(--industrial-panel);
 }
 
 .results-page__toolbar-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .results-page__toolbar-group--print {
@@ -25,8 +28,8 @@
 }
 
 .results-page__document {
-  padding: 20px;
-  border: 1px solid var(--industrial-border-strong);
+  padding: 12px;
+  border: 0;
   border-radius: 0;
   background: var(--industrial-panel);
   box-shadow: none;
@@ -34,15 +37,15 @@
 }
 
 .results-page__header {
-  margin-bottom: 24px;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--industrial-border);
 }
 
 .results-page__header h1 {
   margin: 0 0 8px;
   color: var(--industrial-text);
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -55,11 +58,11 @@
 
 .results-page__records {
   display: grid;
-  gap: 24px;
+  gap: 14px;
 }
 
 .results-page__record {
-  padding: 16px;
+  padding: 10px;
   border: 1px solid var(--industrial-border);
   border-left: 3px solid var(--industrial-border-strong);
   border-radius: 0;
@@ -70,14 +73,14 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .results-page__record-header h2 {
   margin: 0 0 6px;
   color: var(--industrial-text);
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -91,21 +94,21 @@
 .results-page__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 20px;
-  margin-bottom: 16px;
+  gap: 8px 14px;
+  margin-bottom: 10px;
   color: var(--industrial-text);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
 }
 
 .results-page__badge {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
-  padding: 0 12px;
+  min-height: 26px;
+  padding: 0 8px;
   border: 1px solid #8a2d20;
   border-radius: 0;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
@@ -132,7 +135,7 @@
 
 .results-page__table th,
 .results-page__table td {
-  padding: 10px 12px;
+  padding: 6px 8px;
   border: 1px solid var(--industrial-border);
   text-align: left;
   vertical-align: middle;
@@ -141,7 +144,7 @@
 .results-page__table th {
   background: #dcdcdc;
   color: var(--industrial-text);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
@@ -150,12 +153,12 @@
 .results-page__table td {
   background: #fff;
   color: var(--industrial-text);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .results-page__table th:first-child,
 .results-page__table td:first-child {
-  min-width: 180px;
+  min-width: 140px;
 }
 
 .results-page__table th:nth-child(2),
@@ -168,17 +171,22 @@
 .results-page__table td:nth-child(7),
 .results-page__table th:nth-child(8),
 .results-page__table td:nth-child(8) {
-  min-width: 88px;
+  min-width: 68px;
 }
 
 .results-page__table th:nth-child(5),
 .results-page__table td:nth-child(5) {
-  min-width: 90px;
+  min-width: 70px;
 }
 
 .results-page__table th:nth-child(6),
 .results-page__table td:nth-child(6) {
-  min-width: 120px;
+  min-width: 82px;
+}
+
+.results-page__table th:nth-child(9),
+.results-page__table td:nth-child(9) {
+  min-width: 82px;
 }
 
 .results-page__table tbody tr:nth-child(even) td {
@@ -186,22 +194,22 @@
 }
 
 .results-page__worker-column {
-  min-width: 72px;
+  min-width: 56px;
   text-align: center !important;
   white-space: nowrap;
 }
 
 .results-page__worker-cell {
-  padding: 6px 8px !important;
+  padding: 4px 6px !important;
   text-align: center !important;
 }
 
 .results-page__primary-button,
 .results-page__secondary-button {
-  min-height: 42px;
-  padding: 0 20px;
+  min-height: 34px;
+  padding: 0 12px;
   border-radius: 0;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
@@ -242,6 +250,7 @@
 @media (max-width: 768px) {
   .results-page__toolbar {
     flex-direction: column;
+    padding: 10px;
   }
 
   .results-page__toolbar-group--print {
